@@ -1,0 +1,33 @@
+<div th:fragment="nav_bar" class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+	<div class="nano">
+		<div class="nano-content">
+			<div class="logo"><a th:href="@{/}"><!-- <img src="assets/images/logo.png" alt="" /> --><span>Focus
+						ACMEMODA</span></a>
+			</div>
+			<ul>
+				<li class="label">Main</li>
+				<li><a th:href="@{/}">Dashboard</a></li>
+
+
+				<li class="label">Apps</li>
+				<li><a class="sidebar-sub-toggle"><i class="ti-settings"></i> Rest Mongo <span
+							class="sidebar-collapse-icon ti-angle-down"></span></a>
+					<ul>
+						<li><a th:href="@{/ms/listadoClienteMongo}">Lista Equipo</a></li>
+						<li><a th:href="@{/ms/nuevoClienteMongo}">Nuevo CLiente</a></li>
+					</ul>
+				</li>
+
+				
+
+				
+
+				
+
+
+				<li><a><i class="ti-close"></i> Logout</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- /# sidebar -->

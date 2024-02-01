@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Focus ACMEMODA</title>
+<!-- ================= Favicon ================== -->
+<!-- Standard -->
+<link rel="shortcut icon"
+	th:href="@{http://placehold.it/64.png/000/fff}">
+<!-- Retina iPad Touch Icon-->
+<link rel="apple-touch-icon" sizes="144x144"
+	th:href="@{http://placehold.it/144.png/000/fff}">
+<!-- Retina iPhone Touch Icon-->
+<link rel="apple-touch-icon" sizes="114x114"
+	th:href="@{http://placehold.it/114.png/000/fff}">
+<!-- Standard iPad Touch Icon-->
+<link rel="apple-touch-icon" sizes="72x72"
+	th:href="@{http://placehold.it/72.png/000/fff}">
+<!-- Standard iPhone Touch Icon-->
+<link rel="apple-touch-icon" sizes="57x57"
+	th:href="@{http://placehold.it/57.png/000/fff}">
+
+<!-- Styles -->
+<link th:href="@{/assets/css/lib/font-awesome.min.css}" rel="stylesheet">
+<link th:href="@{/assets/css/lib/themify-icons.css}" rel="stylesheet">
+<link th:href="@{/assets/css/lib/menubar/sidebar.css}" rel="stylesheet">
+<link th:href="@{/assets/css/lib/bootstrap.min.css}" rel="stylesheet">
+
+<link th:href="@{/assets/css/lib/helper.css}" rel="stylesheet">
+<link th:href="@{/assets/css/style.css}" rel="stylesheet">
+</head>
+<body>
+	<div th:replace="components/navbar :: nav_bar"></div>
+	<div class="header">
+		<div th:replace="components/despliegue :: des"></div>
+	</div>
+	<div class="content-wrap">
+		<div class="main">
+			<div class="container-fluid">
+
+				<div class="row">
+					<div class="col-lg-10 p-r-0 title-margin-right">
+						<div class="page-header">
+							<div class="page-title">
+								<h1>Nuevo Cliente</h1>
+								<!-- /# Aqui ingrese el dato a trabajar -->
+								<form class="form-valide" th:action="@{/guardarC}"
+									th:object="${nuevoC}" method="post">
+									<div class="form-group row">
+										<label class="col-lg-4 col-form-label" for="val-username">Nombre
+											 <span class="text-danger">*</span>
+										</label>
+										<div class="col-lg-8">
+											<input type="text" class="form-control" id="val-username"
+												name="val-username" placeholder=""
+												th:field="*{nombre}">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-lg-4 col-form-label" for="val-username">Apellido
+											 <span class="text-danger">*</span>
+										</label>
+										<div class="col-lg-8">
+											<input type="text" class="form-control" id="val-username"
+												name="val-username" placeholder="........"
+												th:field="*{apellido}">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-lg-4 col-form-label" for="val-username">
+											Direccion <span class="text-danger">*</span>
+										</label>
+										<div class="col-lg-8">
+											<input type="text" class="form-control" id="val-username"
+												name="val-username" placeholder="........"
+												th:field="*{direccion}">
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-lg-4 col-form-label"><a
+											data-toggle="modal" data-target="#modal-terms" href="#">Estado</a>
+											<span class="text-danger">*</span></label>
+										<div class="col-lg-8">
+											<label class="css-control css-control-primary css-checkbox"
+												for="val-terms"> <input type="checkbox"
+												class="css-control-input" id="val-terms" name="val-terms"
+												value="1" th:field="*{estadoCliente}"> <span
+												class="css-control-indicator"></span>
+											</label>
+										</div>
+									</div>
+
+
+									<div class="form-group row">
+										<div class="col-lg-8 ml-auto">
+											<button type="submit" class="btn btn-primary">Guardar</button>
+										</div>
+									</div>
+								</form>
+
+
+
+
+
+								<!-- /# Aqui termina el dato a trabajar -->
+							</div>
+						</div>
+					</div>
+					<!-- /# column -->
+				</div>
+				<!-- /# row -->
+				<section id="main-content">
+					<div th:replace="components/pie :: pie"></div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<!-- jquery vendor -->
+	<script th:src="@{/assets/js/lib/jquery.min.js}"></script>
+	<script th:src="@{/assets/js/lib/jquery.nanoscroller.min.js}"></script>
+	<!-- nano scroller -->
+	<script th:src="@{/assets/js/lib/menubar/sidebar.js}"></script>
+	<script th:src="@{/assets/js/lib/preloader/pace.min.js}"></script>
+	<!-- sidebar -->
+	<script th:src="@{/assets/js/lib/bootstrap.min.js}">
+		
+	</script>
+	<!-- bootstrap -->
+
+	<script th:src="@{/assets/js/lib/morris-chart/raphael-min.js}"></script>
+	<script th:src="@{/assets/js/lib/morris-chart/morris.js}"></script>
+	<script th:src="@{/assets/js/lib/morris-chart/morris-init.js}"></script>
+
+
+	<script th:src="@{/assets/js/scripts.js}"></script>
+	<!-- scripit init-->
+</body>
+</html>
